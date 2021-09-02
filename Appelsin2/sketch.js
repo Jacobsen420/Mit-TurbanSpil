@@ -189,3 +189,5 @@ OPGAVER
             dur dette
 
 */
+for(let k = 0; k < 11; k++)
+console.log(k)

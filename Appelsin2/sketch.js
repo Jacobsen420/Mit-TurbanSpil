@@ -187,5 +187,7 @@ OPGAVER
             så man kan flytte turbanen med musen
 
             hvis det virker skal dette være der :)
+            
+            hej med jer
 
 */

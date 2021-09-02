@@ -186,6 +186,6 @@ OPGAVER
             ting kan justeres mens man spiller. Lav evt. programmet om, 
             så man kan flytte turbanen med musen
 
-            
+            dur dette
 
 */

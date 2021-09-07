@@ -1,12 +1,12 @@
 /*
- * Dette script definerer klassen Kurv
+ her bliver kurv classen lavet med dens constructor
 */
 
 class Kurv {
-    /* Den første del er en "konstruktør".
-     * Den tager parametrene og konstruerer et nyt objekt 
-     * ud fra dem. Værdierne huskes som hørende til netop 
-     * dette objekt ved hjælp af nøgleordet this
+    /* 
+     i constructoren bliver parametrene taget og lavet om
+     til nye objekter ud fra dem. dette gør så at værdigerne
+     bliver husket og kan fremkaldes ved hjælp af nøgleordet "this".
      */
     constructor(x, y, bredde, dybde, speed, turbanbillede) {
         this.x = x;
@@ -18,21 +18,44 @@ class Kurv {
         this.turbanbillede;
     }   
     
-    /* Tegner kurven. Her kan evt. sættes et billede ind i stedet
-     */
+    /* 
+    her bliver turbanen tegnet, og i mit tilfælde ville man
+    højt sandsynligt fjerne "rect" da jeg har lavet en
+    "image" istedet, men har alligevel beholdt den.
+    */
     tegn = function () {
             fill(this.col);
             rect(this.x, this.y, this.bredde, this.dybde);
             image(turbanbillede, this.x, this.y, 80, 50);
     }
-
-    /* Flytter kurvens position
+    /* 
+    Flytter kurvens position
+    move x gør så at boksen kan bevæge sig frem (og tilbage hvis 
+    det hvis lavet) på x aksen
+    det samme sker her bare med y aksen. 
      */
+    move() {
+        if (keyIsDown(UP_ARROW)) {
+            this.moveY(-this.speed);
+        }
+        if (keyIsDown(DOWN_ARROW)) {
+            this.moveY(this.speed);
+        }    
+        if (keyIsDown(LEFT_ARROW)) {
+            this.moveX(-this.speed);
+        }
+        if (keyIsDown(RIGHT_ARROW)) {
+            this.moveX(this.speed);
+        } 
+    }
+
     moveX = function(flyt) {
         this.x += flyt;
         if (this.x < 0) {this.x = 0;};
         if (this.x > width-this.bred) {this.x = width - this.bred;};
     }
+
+
 
     moveY = function(flyt) {
         this.y += flyt;

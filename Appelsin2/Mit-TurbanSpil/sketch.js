@@ -31,7 +31,7 @@ let spilIgang = true;   //flag
  */
 let turbanbillede;
 function preload() {
-    turbanbillede = loadImage('Turban.png');
+    turbanbillede = loadImage('Mit-TurbanSpil/Turban.png');
   }
 
  
